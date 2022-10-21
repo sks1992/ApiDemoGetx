@@ -27,4 +27,16 @@ class AlbumService extends GetConnect {
       return result;
     }
   }
+  /*
+    Future<NewsModel> getTopNewsHeadlines() async {
+    var response = await get(
+        "/top-headlines?country=in&apiKey=e004331040d8464892c01b7f4b70641f");
+    if (response.hasError) {
+      return NewsModel(status: "", totalResults: 0, articles: []);
+    } else {
+      var result = NewsModel.fromJson(json.decode(response.bodyString!));
+      return result;
+    }
+  }
+  * */
 }
