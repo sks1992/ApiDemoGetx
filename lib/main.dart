@@ -1,9 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:untitled/firebase_options.dart';
 
 import 'app_routes.dart';
+import 'core/service/notification_service.dart';
+//30:7C:16:46:30:25:49:14:F3:EE:29:88:56:8F:76:97:1D:8D:6F:86
+void main() async{
 
-void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform
+  );
+
+  await NotificationService.initialize();
+
   runApp(const MyApp());
 }
 
